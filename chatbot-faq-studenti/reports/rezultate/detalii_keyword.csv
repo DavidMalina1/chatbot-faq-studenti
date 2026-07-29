@@ -1,0 +1,41 @@
+intrebare_test,id_asteptat,id_prezis_top1,intrebare_prezisa_top1,scor_top1,rang_raspuns_corect
+La ce ore e deschis secretariatul?,1,1,Care este programul secretariatului facultății?,0.0,1
+Am nevoie de o adeverinta ca sunt student pentru banca. Cum o obtin?,2,2,Cum pot obține o adeverință de student?,0.333,1
+Mi-am pierdut carnetul de student. Ce fac?,3,2,Cum pot obține o adeverință de student?,0.2,3
+Unde ma inscriu pentru restanta?,4,4,Cum mă înscriu la un examen de restanță?,0.667,1
+De cate ori pot da un examen fara sa platesc?,5,5,Câte prezentări la examen am dreptul pentru o disciplină?,0.25,1
+Am picat materia si dupa restanta. Ce urmeaza?,6,4,Cum mă înscriu la un examen de restanță?,0.167,2
+Nu sunt de acord cu nota de la examen. Pot face contestatie?,7,7,Pot contesta nota primită la un examen?,0.333,1
+In ce perioada sunt restantele?,8,1,Care este programul secretariatului facultății?,0.0,8
+Ce burse exista pentru studenti?,9,12,Când se depun dosarele pentru burse?,0.2,2
+Cu ce medie iau bursa de studiu?,10,11,Ce acte îmi trebuie pentru bursa socială?,0.167,4
+Ce dosar trebuie sa fac pentru bursa sociala?,11,11,Ce acte îmi trebuie pentru bursa socială?,0.5,1
+Pana cand pot depune dosarul de bursa?,12,11,Ce acte îmi trebuie pentru bursa socială?,0.167,12
+Cum aplic pentru camin?,13,13,Cum pot obține un loc în cămin?,0.25,1
+Cat platesc pe luna la camin?,14,13,Cum pot obține un loc în cămin?,0.167,4
+Vreau sa ma mut in alta camera de camin. Se poate?,15,13,Cum pot obține un loc în cămin?,0.167,4
+Cum platesc taxa de studii? Se poate in rate?,16,18,Ce se întâmplă dacă nu plătesc taxa la termen?,0.333,2
+Daca am medie mare pot ajunge la buget?,17,17,Pot trece de la taxă la buget?,0.167,1
+Am intarziat cu plata taxei. Ce risc?,18,1,Care este programul secretariatului facultății?,0.0,18
+Cate credite imi trebuie ca sa trec anul?,19,19,Câte credite trebuie să acumulez pentru a promova anul?,0.5,1
+Cand aleg optionalele pentru anul viitor?,20,20,Cum îmi aleg disciplinele opționale?,0.167,1
+Vreau sa iau o pauza de un an de la facultate. E posibil?,21,22,Cum mă pot transfera la altă facultate sau specializare?,0.125,22
+Ma pot muta la alta specializare?,22,22,Cum mă pot transfera la altă facultate sau specializare?,0.4,1
+Unde vad orarul?,23,23,Unde găsesc orarul grupelor?,0.25,1
+Cum aflu grupa din care fac parte?,24,24,Cum aflu în ce grupă am fost repartizat?,0.4,1
+Trebuie neaparat sa fac practica?,25,26,Unde pot face practica de specialitate?,0.333,2
+La ce firme pot sa fac practica?,26,26,Unde pot face practica de specialitate?,0.333,1
+Ce acte predau dupa ce termin stagiul de practica?,27,26,Unde pot face practica de specialitate?,0.167,4
+Cand imi aleg subiectul pentru licenta?,28,28,Când trebuie să îmi aleg tema lucrării de licență?,0.4,1
+Ce conditii sunt ca sa ma pot prezenta la licenta?,29,28,Când trebuie să îmi aleg tema lucrării de licență?,0.167,3
+Cum decurge sustinerea licentei in fata comisiei?,30,1,Care este programul secretariatului facultății?,0.0,30
+Nu ma pot loga pe platforma de cursuri. Cine ma poate ajuta?,31,31,Nu îmi pot accesa contul de pe platforma de e-learning. Ce fac?,0.143,1
+Cum imi fac mailul de student?,32,2,Cum pot obține o adeverință de student?,0.25,32
+De unde descarc cursurile si laboratoarele?,33,1,Care este programul secretariatului facultății?,0.0,33
+Ce trebuie sa fac ca sa plec cu Erasmus?,34,34,Cum pot pleca cu bursă Erasmus?,0.25,1
+Daca dau examene in strainatate mi se recunosc acasa?,35,1,Care este programul secretariatului facultății?,0.0,35
+Cum vorbesc cu tutorele de an?,36,36,Cum pot lua legătura cu îndrumătorul de an?,0.167,1
+Sunt bolnav in ziua examenului. Pierd prezentarea?,37,37,Ce pot face dacă mă îmbolnăvesc chiar în ziua examenului?,0.286,1
+Daca renunt la facultate imi recuperez taxa platita?,38,16,Care este taxa de școlarizare și cum o pot plăti?,0.143,5
+Ce imi trebuie pentru admiterea la master?,39,39,Ce medie îmi trebuie ca să mă înscriu la master?,0.25,1
+Ce nu am voie sa fac in camin?,40,13,Cum pot obține un loc în cămin?,0.25,2
