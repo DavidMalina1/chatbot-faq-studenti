@@ -1,6 +1,7 @@
 """Funcții utilitare: încărcarea datelor și normalizarea textului în limba română."""
 
 from __future__ import annotations
+
 import re
 import unicodedata
 from pathlib import Path
