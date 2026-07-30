@@ -158,6 +158,41 @@ class SbertSearch(BaseSearch):
         return (self._doc_emb @ q_emb.T).ravel()
 
 
+class EnsembleSearch(BaseSearch):
+    """Îmbunătățirea 3: combinarea metodelor (fuziune de scoruri).
+
+    Scorul final al unui document este media ponderată a scorurilor date
+    de cele trei metode de bază. Toate scorurile sunt în intervalul [0, 1]
+    (Jaccard și similarități cosinus), deci pot fi combinate direct.
+
+    Ponderile implicite favorizează metodele mai performante (TF-IDF și
+    LSA), păstrând un vot mai mic pentru potrivirea exactă de cuvinte:
+    intuiția este că metodele greșesc pe întrebări diferite, iar acolo
+    unde una ezită, celelalte o pot corecta.
+    """
+
+    name = "ensemble"
+
+    def __init__(self, faq: pd.DataFrame,
+                 engines: dict | None = None,
+                 weights: tuple = (0.2, 0.4, 0.4)):
+        super().__init__(faq)
+        if engines is None:
+            engines = {
+                "keyword": KeywordSearch(faq),
+                "tfidf": TfidfSearch(faq),
+                "lsa": LsaSearch(faq),
+            }
+        self.engines = engines
+        self.weights = weights
+
+    def scores(self, query: str) -> np.ndarray:
+        total = np.zeros(len(self.faq))
+        for w, engine in zip(self.weights, self.engines.values()):
+            total += w * engine.scores(query)
+        return total
+
+
 def build_engines(faq: pd.DataFrame, include_sbert: bool = False) -> dict:
     """Construiește toate motoarele de căutare disponibile."""
     engines: dict[str, BaseSearch] = {
@@ -165,6 +200,9 @@ def build_engines(faq: pd.DataFrame, include_sbert: bool = False) -> dict:
         "tfidf": TfidfSearch(faq),
         "lsa": LsaSearch(faq),
     }
+    # Ansamblul reutilizează motoarele deja construite (fără recalcul).
+    engines["ensemble"] = EnsembleSearch(
+        faq, engines={k: engines[k] for k in ("keyword", "tfidf", "lsa")})
     if include_sbert:
         try:
             engines["sbert"] = SbertSearch(faq)

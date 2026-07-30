@@ -51,7 +51,10 @@ chatbot-faq-studenti/
 3. **Căutare semantică (LSA)** – embeddings obținute prin proiectarea
    reprezentării TF-IDF într-un spațiu latent de dimensiune redusă
    (TruncatedSVD), apoi similaritate cosinus.
-4. *(opțional)* **SBERT** – embeddings neuronale cu modelul multilingv
+4. **Combinat (ensemble)** – media ponderată a scorurilor celor trei metode
+   (ponderi 0.2 / 0.4 / 0.4); metodele greșesc pe întrebări diferite și se
+   corectează reciproc.
+5. *(opțional)* **SBERT** – embeddings neuronale cu modelul multilingv
    `paraphrase-multilingual-MiniLM-L12-v2` (necesită internet la prima rulare
    pentru descărcarea modelului, ~470 MB).
 
@@ -118,11 +121,13 @@ Evaluare pe cele 40 de întrebări de test (răspunsul corect trebuie să apară
 | Metodă | recall@1 | recall@3 | recall@5 | MRR | timp mediu / întrebare |
 |---|---|---|---|---|---|
 | Cuvinte-cheie (bază) | 0.50 | 0.68 | 0.80 | 0.62 | ~1 ms |
-| TF-IDF + cosinus | 0.78 | **0.95** | 0.98 | 0.86 | ~4 ms |
-| Semantic (LSA) | **0.83** | 0.93 | **0.98** | **0.88** | ~4 ms |
+| TF-IDF + cosinus | 0.78 | 0.95 | 0.98 | 0.86 | ~4 ms |
+| Semantic (LSA) | 0.83 | 0.93 | 0.98 | 0.88 | ~4 ms |
+| **Combinat (medie ponderată)** | **0.85** | **0.95** | **0.98** | **0.90** | ~8 ms |
 
-Căutarea semantică rezolvă corect din prima încercare 33/40 de întrebări,
-față de 20/40 pentru varianta de bază. Detaliile per întrebare și graficele
+Metoda combinată rezolvă corect din prima încercare 34/40 de întrebări,
+față de 20/40 pentru varianta de bază: cele trei metode greșesc pe întrebări
+diferite, iar media ponderată a scorurilor le corectează reciproc. Detaliile per întrebare și graficele
 se află în `reports/rezultate/`, iar interpretarea completă și analiza
 erorilor în raportul scris.
 

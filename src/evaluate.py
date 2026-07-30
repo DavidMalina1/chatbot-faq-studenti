@@ -38,6 +38,7 @@ LABELS = {
     "keyword": "Cuvinte-cheie (bază)",
     "tfidf": "TF-IDF + cosinus",
     "lsa": "Semantic (LSA)",
+    "ensemble": "Combinat (medie ponderată)",
     "sbert": "Semantic (SBERT)",
 }
 
@@ -82,7 +83,7 @@ def plot_metrics(summary: pd.DataFrame, path: Path) -> None:
     x = np.arange(len(K_VALUES))
     width = 0.8 / len(methods)
     fig, ax = plt.subplots(figsize=(7.5, 4.2))
-    colors = ["#9aa5b1", "#4a7fb5", "#2c5f2d", "#b85042"]
+    colors = ["#9aa5b1", "#4a7fb5", "#2c5f2d", "#7b4fa6", "#b85042"]
     for i, m in enumerate(methods):
         vals = [summary.loc[summary["metoda"] == m, f"recall@{k}"].iloc[0]
                 for k in K_VALUES]
@@ -105,7 +106,7 @@ def plot_rank_distribution(details: dict[str, pd.DataFrame], path: Path) -> None
     """Distribuția rangului răspunsului corect, pe metode."""
     fig, ax = plt.subplots(figsize=(7.5, 4.2))
     bins = np.arange(0.5, 11.5, 1)
-    colors = ["#9aa5b1", "#4a7fb5", "#2c5f2d", "#b85042"]
+    colors = ["#9aa5b1", "#4a7fb5", "#2c5f2d", "#7b4fa6", "#b85042"]
     for i, (name, detail) in enumerate(details.items()):
         ranks = detail["rang_raspuns_corect"].clip(upper=10)
         hist, _ = np.histogram(ranks, bins=bins)

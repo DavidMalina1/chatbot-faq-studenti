@@ -3,7 +3,7 @@
 Rulare:
     python src/demo.py                       # mod interactiv
     python src/demo.py "cum iau bursa"       # o singură întrebare
-    python src/demo.py --metoda keyword "unde vad orarul"
+    python src/demo.py --metoda ensemble "unde vad orarul"
 """
 
 import argparse
@@ -23,7 +23,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("intrebare", nargs="*", help="întrebarea adresată")
     parser.add_argument("--metoda", default="lsa",
-                        choices=["keyword", "tfidf", "lsa", "sbert"])
+                        choices=["keyword", "tfidf", "lsa", "ensemble", "sbert"])
     parser.add_argument("--top", type=int, default=3)
     args = parser.parse_args()
 
