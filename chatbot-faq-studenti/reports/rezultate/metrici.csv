@@ -1,4 +1,0 @@
-metoda,recall@1,recall@3,recall@5,MRR,timp_mediu_ms
-keyword,0.5,0.675,0.8,0.62,0.95
-tfidf,0.775,0.95,0.975,0.858,3.73
-lsa,0.825,0.925,0.975,0.881,4.23
